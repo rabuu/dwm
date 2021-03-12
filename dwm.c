@@ -1823,7 +1823,12 @@ tile(Monitor *m)
 	float mfacts = 0, sfacts = 0;
 	Client *c;
 
-	for (n = 0, c = nexttiled(m->clients); c; c = nexttiled(c->next), n++);
+	for (n = 0, c = nexttiled(m->clients); c; c = nexttiled(c->next), n++) {
+		if (n < m->nmaster)
+			mfacts += c->cfact;
+		else
+			sfacts += c->cfact;
+	}
 	if (n == 0)
 		return;
 
@@ -1834,23 +1839,20 @@ tile(Monitor *m)
 		mw = m->ww;
 		ns = 1;
 	}
-	for(i = 0, my = ty = gappx, c = nexttiled(m->clients); c; c = nexttiled(c->next), i++) {
-		if (n < m->nmaster)
-			mfacts += c->cfact;
-		else
-			sfacts += c->cfact;
+	for(i = 0, my = ty = gappx, c = nexttiled(m->clients); c; c = nexttiled(c->next), i++)
 		if (i < m->nmaster) {
-			h = ((m->wh - my) * (c->cfact / mfacts)) - gappx;
-			resize(c, m->wx + gappx, m->wy + my, mw - (2*c->bw) - gappx*(5-ns)/2, h - (2*c->bw), False);
-			my += HEIGHT(c) + gappx;
-		    mfacts -= c->cfact;
+			h = (m->wh - my) * (c->cfact / mfacts) - gappx;
+			resize(c, m->wx + gappx, m->wy + my, mw - (2*c->bw) - gappx*(5 - ns) / 2, h - (2*c->bw), False);
+			if (my + HEIGHT(c) + gappx < m->wh)
+				my += HEIGHT(c) + gappx;
+			mfacts -= c->cfact;
 		} else {
-			h = ((m->wh - ty) * (c->cfact / sfacts)) - gappx;
-			resize(c, m->wx + mw + gappx/ns, m->wy + ty, m->ww - mw - (2*c->bw) - gappx*(5-ns)/2, h - (2*c->bw), False);
-			ty += HEIGHT(c) + gappx;
-		    sfacts -= c->cfact;
+			h = (m->wh - ty) * (c->cfact / sfacts) - gappx;
+			resize(c, m->wx + mw + gappx / ns, m->wy + ty, m->ww - mw - (2*c->bw) - gappx*(5 - ns) / 2, h - (2*c->bw), False);
+			if (ty + HEIGHT(c) + gappx < m->wh)
+				ty += HEIGHT(c) + gappx;
+			sfacts -= c->cfact;
 		}
-	}
 }
 
 void
@@ -1879,8 +1881,8 @@ togglefloating(const Arg *arg)
 void
 togglefullscr(const Arg *arg)
 {
-  if(selmon->sel)
-    setfullscreen(selmon->sel, !selmon->sel->isfullscreen);
+	if(selmon->sel)
+		setfullscreen(selmon->sel, !selmon->sel->isfullscreen);
 }
 
 void
