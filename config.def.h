@@ -7,9 +7,9 @@ static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
 static unsigned int gappx     = 6;        /* gaps between windows */
 static char mainfont[] 				= "JetBrains Mono:size=13";
-static const char *fonts[]          = { mainfont };
-static char normbgcolor[]           = "#222222";
-static char normbordercolor[]       = "#444444";
+static const char *fonts[] 			= { mainfont };
+static char normbgcolor[] 			= "#222222";
+static char normbordercolor[] 		= "#444444";
 static char normfgcolor[]           = "#bbbbbb";
 static char selfgcolor[]            = "#eeeeee";
 static char selbordercolor[]        = "#005577";
