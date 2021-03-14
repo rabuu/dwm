@@ -59,7 +59,7 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 
 static const char *dmenucmd[] 		  		 = { "dmenu_run", "-m", dmenumon, NULL };
-static const char *passmenucmd[]             = { "passmenu", "-p", "Pass", "-l", "2", NULL };
+static const char *passmenucmd[]             = { "passmenu", "-p", "Pass", NULL };
 static const char *networkmanagerdmenucmd[]  = { "networkmanager_dmenu", NULL };
 
 static const char *termcmd[]  		= SHCMD("$TERMINAL");
