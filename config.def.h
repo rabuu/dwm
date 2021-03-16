@@ -66,6 +66,7 @@ static const char *termcmd[]  		= SHCMD("$TERMINAL");
 static const char *browsercmd[] 	= SHCMD("$BROWSER");
 
 static const char *slockcmd[]       = { "slock",                    NULL };
+static const char *swarplockcmd[] 	= { "swarp", "0", "1080", 		NULL };
 
 static const char *telegramcmd[]    = { "telegram-desktop",         NULL };
 static const char *discordcmd[]     = { "discord",                  NULL };
@@ -94,6 +95,7 @@ static Key keys[] = {
 
 	/* start program */
 	{ MODKEY,                         XK_space,                   spawn,            { .v = slockcmd                } },
+	{ MODKEY|ControlMask,             XK_space,                   spawn,            { .v = swarplockcmd            } },
 	{ MODKEY,                         XK_Return,                  spawn,            { .v = termcmd 				   } },
 	{ MODKEY|ShiftMask,               XK_space,                   spawn,            { .v = switchkeyboardlayoutcmd } },
 	{ MODKEY|ShiftMask,               XK_b,                       spawn,            { .v = browsercmd              } },
