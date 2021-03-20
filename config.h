@@ -75,12 +75,14 @@ static const char *discordcmd[]     = { "discord",                  NULL };
 static const char *spotifycmd[]     = { "spotify",                  NULL };
 
 static const char *switchkeyboardlayoutcmd[] = { "switch_keyboard_layout",   NULL };
+
 static const char *volumeupcmd[]             = { "volume_up",                NULL };
 static const char *volumedowncmd[]           = { "volume_down",              NULL };
 static const char *volumetogglecmd[]         = { "volume_toggle",            NULL };
 static const char *microphonetogglecmd[]     = { "microphone_toggle",        NULL };
 static const char *brightnessupcmd[]         = { "brightness_up",            NULL };
 static const char *brightnessdowncmd[]       = { "brightness_down",          NULL };
+static const char *scrotcmd[] 		         = { "scrot", "/data/pictures/screenshots/", NULL };
 
 static const char *killxorg[]				 = { "pkill", "-15", "Xorg", 	 NULL };
 
@@ -120,6 +122,7 @@ static Key keys[] = {
 	{ 0,                              XF86XK_MonBrightnessUp,     spawn,            { .v = brightnessupcmd         } },
 	{ 0,                              XF86XK_MonBrightnessDown,   spawn,            { .v = brightnessdowncmd       } },
 	{ 0, 							  XF86XK_Search, 			  spawn,            { .v = dmenucmd                } },
+	{ 0, 							  XF86XK_Tools, 			  spawn,            { .v = scrotcmd                } },
 
 	/* toggle bar */
 	{ MODKEY|ControlMask,             XK_b,                       togglebar,        { 0 }                            },
