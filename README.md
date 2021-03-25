@@ -68,7 +68,7 @@ As standard font JetBrains Mono is set. Unless you set a own font you need to in
 For some commands you need to have the appropriate programs installed.<br>
 For some commands you need to have a script ([my dotfiles](https://github.com/rabuu/dotfiles)).<br>
 
-## used patches
+### used patches
 - [actualfullscreen](https://dwm.suckless.org/patches/actualfullscreen/dwm-actualfullscreen-20191112-cb3f58a.diff)
 - [alwaysfullscreen](https://dwm.suckless.org/patches/alwaysfullscreen/dwm-alwaysfullscreen-6.1.diff)
 - [centeredmaster](https://dwm.suckless.org/patches/centeredmaster/dwm-centeredmaster-6.1.diff)
