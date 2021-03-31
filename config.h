@@ -74,7 +74,6 @@ static const char *swarplockcmd[] 	= { "swarp", "0", "1080", 		NULL };
 
 static const char *telegramcmd[]    = { "telegram-desktop",         NULL };
 static const char *discordcmd[]     = { "discord",                  NULL };
-static const char *spotifycmd[]     = { "spotify",                  NULL };
 
 static const char *switchkeyboardlayoutcmd[] = { "switch_keyboard_layout",   NULL };
 
@@ -107,7 +106,6 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,               XK_b,                       spawn,            { .v = browsercmd              } },
 	{ MODKEY|ShiftMask,               XK_t,                       spawn,            { .v = telegramcmd             } },
 	{ MODKEY|ShiftMask,               XK_d,                       spawn,            { .v = discordcmd              } },
-	{ MODKEY|ShiftMask,               XK_s,                       spawn,            { .v = spotifycmd              } },
 
 	/* quit program */
 	{ MODKEY|ShiftMask,               XK_c,                       killclient,       { 0 }                            },
