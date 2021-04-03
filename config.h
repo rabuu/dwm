@@ -164,7 +164,7 @@ static Key keys[] = {
 	{ MODKEY,                         XK_0,                       view,             { .ui = ~0 }                     },
 
 	/* sticky windows */
-	{ MODKEY, 						  XK_s, 					  togglesticky, 	{0} 							 },
+	{ MODKEY|ControlMask, 						  XK_s, 					  togglesticky, 	{0} 							 },
 
 	/* change tags */
 	{ MODKEY|ShiftMask,               XK_0,                       tag,              { .ui = ~0 }                     },
