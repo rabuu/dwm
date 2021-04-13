@@ -85,7 +85,7 @@ static const char *brightnessupcmd[]         = { "brightness_up",            NUL
 static const char *brightnessdowncmd[]       = { "brightness_down",          NULL };
 static const char *scrotcmd[] 		         = { "scrot", "/data/pictures/screenshots/", NULL };
 
-static const char *killxorg[]				 = { "pkill", "-15", "Xorg", 	 NULL };
+static const char *killxorg[]				 = { "killall", "Xorg", 	 NULL };
 
 
 #include <X11/XF86keysym.h>
