@@ -71,10 +71,10 @@ For some commands you need to have a script ([my dotfiles](https://github.com/ra
 ### used patches
 - [actualfullscreen](https://dwm.suckless.org/patches/actualfullscreen/dwm-actualfullscreen-20191112-cb3f58a.diff)
 - [alwaysfullscreen](https://dwm.suckless.org/patches/alwaysfullscreen/dwm-alwaysfullscreen-6.1.diff)
-- [centeredmaster](https://dwm.suckless.org/patches/centeredmaster/dwm-centeredmaster-6.1.diff)
 - [cfacts](https://dwm.suckless.org/patches/cfacts/dwm-cfacts-20200913-61bb8b2.diff)
 - [status2d](https://dwm.suckless.org/patches/status2d/dwm-status2d-20200508-60bb3df.diff)
 - [sticky](https://dwm.suckless.org/patches/sticky/dwm-sticky-6.1.diff)
 	- [stickyindicator](https://dwm.suckless.org/patches/stickyindicator/dwm-stickyindicator-6.2.diff)
 - [tilegap](https://dwm.suckless.org/patches/tilegap/dwm-tilegap-6.2.diff)
+- [tcl (Three Column Layout)](https://dwm.suckless.org/patches/three-column/)
 - [xresources](https://dwm.suckless.org/patches/xresources/dwm-xresources-6.2.diff)
