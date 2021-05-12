@@ -37,7 +37,7 @@ static const Rule rules[] = {
 /* layout(s) */
 static float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
 static int nmaster     = 1;    /* number of clients in master area */
-static int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
+static int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
 
 #include "tcl.c"
 static const Layout layouts[] = {
@@ -72,18 +72,17 @@ static const char *browsercmd[] 	= SHCMD("$BROWSER");
 static const char *slockcmd[]       = { "slock",                    NULL };
 static const char *swarplockcmd[] 	= { "swarp", "0", "1080", 		NULL };
 
-static const char *telegramcmd[]    = { "telegram-desktop",         NULL };
+static const char *telegramcmd[]    = { "kotatogram-desktop",       NULL };
 static const char *discordcmd[]     = { "discord",                  NULL };
 
+// check out dotfiles for scripts
 static const char *switchkeyboardlayoutcmd[] = { "switch_keyboard_layout",   NULL };
-
 static const char *volumeupcmd[]             = { "volume_up",                NULL };
 static const char *volumedowncmd[]           = { "volume_down",              NULL };
 static const char *volumetogglecmd[]         = { "volume_toggle",            NULL };
 static const char *microphonetogglecmd[]     = { "microphone_toggle",        NULL };
-static const char *brightnessupcmd[]         = { "brightness_up",            NULL };
-static const char *brightnessdowncmd[]       = { "brightness_down",          NULL };
-static const char *scrotcmd[] 		         = { "scrot", "/data/pictures/screenshots/", NULL };
+static const char *powercontrolcmd[] 		 = { "pwr", "ask", 				 NULL };
+static const char *scrotcmd[] 		         = { "shot", "--ask", 			 NULL };
 
 static const char *killxorg[]				 = { "killall", "Xorg", 	 NULL };
 
@@ -96,6 +95,7 @@ static Key keys[] = {
 	/* dmenu prompts */
 	{ MODKEY,                         XK_p,                       spawn,            { .v = dmenucmd                } },
 	{ MODKEY|ShiftMask,               XK_p,                       spawn,            { .v = passmenucmd             } },
+	{ MODKEY|ControlMask,             XK_p,                       spawn,            { .v = powercontrolcmd 		   } },
 	{ MODKEY|ShiftMask,               XK_n,                       spawn,            { .v = networkmanagerdmenucmd  } },
 
 	/* start program */
@@ -119,8 +119,6 @@ static Key keys[] = {
 	{ 0,                              XF86XK_AudioLowerVolume,    spawn,            { .v = volumedowncmd           } },
 	{ 0,                              XF86XK_AudioMute,           spawn,            { .v = volumetogglecmd         } },
 	{ 0,                              XF86XK_AudioMicMute,        spawn,            { .v = microphonetogglecmd     } },
-	{ 0,                              XF86XK_MonBrightnessUp,     spawn,            { .v = brightnessupcmd         } },
-	{ 0,                              XF86XK_MonBrightnessDown,   spawn,            { .v = brightnessdowncmd       } },
 	{ 0, 							  XF86XK_Search, 			  spawn,            { .v = dmenucmd                } },
 	{ 0, 							  XF86XK_Tools, 			  spawn,            { .v = scrotcmd                } },
 
@@ -163,7 +161,7 @@ static Key keys[] = {
 	{ MODKEY,                         XK_0,                       view,             { .ui = ~0 }                     },
 
 	/* sticky windows */
-	{ MODKEY|ControlMask, 						  XK_s, 					  togglesticky, 	{0} 							 },
+	{ MODKEY|ControlMask, 			  XK_s, 					  togglesticky, 	{0} 							 },
 
 	/* change tags */
 	{ MODKEY|ShiftMask,               XK_0,                       tag,              { .ui = ~0 }                     },
