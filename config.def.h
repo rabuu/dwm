@@ -96,7 +96,7 @@ static Key keys[] = {
 	{ MODKEY,                         XK_p,                       spawn,            { .v = dmenucmd                } },
 	{ MODKEY|ShiftMask,               XK_p,                       spawn,            { .v = passmenucmd             } },
 	{ MODKEY|ControlMask,             XK_p,                       spawn,            { .v = powercontrolcmd 		   } },
-	{ MODKEY|ShiftMask,               XK_n,                       spawn,            { .v = networkmanagerdmenucmd  } },
+	{ MODKEY|ControlMask,             XK_n,                       spawn,            { .v = networkmanagerdmenucmd  } },
 
 	/* start program */
 	{ MODKEY,                         XK_space,                   spawn,            { .v = slockcmd                } },
