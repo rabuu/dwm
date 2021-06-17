@@ -72,8 +72,7 @@ static const char *browsercmd[] 	= SHCMD("$BROWSER");
 static const char *slockcmd[]       = { "slock",                    NULL };
 static const char *swarplockcmd[] 	= { "swarp", "0", "1080", 		NULL };
 
-/* static const char *telegramcmd[]    = { "kotatogram-desktop",       NULL }; */
-static const char *telegramcmd[]    = { "telegram-desktop",       NULL };
+static const char *telegramcmd[]    = { "kotatogram-desktop",       NULL };
 static const char *discordcmd[]     = { "discord",                  NULL };
 
 // check out dotfiles for scripts
