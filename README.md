@@ -75,6 +75,7 @@ For some commands you need to have a script ([my dotfiles](https://github.com/ra
 - [status2d](https://dwm.suckless.org/patches/status2d/dwm-status2d-20200508-60bb3df.diff)
 - [sticky](https://dwm.suckless.org/patches/sticky/dwm-sticky-6.1.diff)
 	- [stickyindicator](https://dwm.suckless.org/patches/stickyindicator/dwm-stickyindicator-6.2.diff)
+- [swallow](https://dwm.suckless.org/patches/swallow/dwm-swallow-20201211-61bb8b2.diff)
 - [tilegap](https://dwm.suckless.org/patches/tilegap/dwm-tilegap-6.2.diff)
 - [tcl (Three Column Layout)](https://dwm.suckless.org/patches/three-column/)
 - [xresources](https://dwm.suckless.org/patches/xresources/dwm-xresources-6.2.diff)
