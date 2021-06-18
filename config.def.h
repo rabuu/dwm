@@ -84,7 +84,6 @@ static const char *volumedowncmd[]           = { "volume_down",              NUL
 static const char *volumetogglecmd[]         = { "volume_toggle",            NULL };
 static const char *microphonetogglecmd[]     = { "microphone_toggle",        NULL };
 static const char *powercontrolcmd[] 		 = { "pwr", "ask", 				 NULL };
-static const char *qsysimcmd[] 		         = { "qsysim", "ask", 			 NULL };
 static const char *scrotcmd[] 		         = { "shot", "--ask", 			 NULL };
 
 static const char *killxorg[]				 = { "killall", "Xorg", 	 NULL };
@@ -99,7 +98,6 @@ static Key keys[] = {
 	{ MODKEY,                         XK_p,                       spawn,            { .v = dmenucmd                } },
 	{ MODKEY|ShiftMask,               XK_p,                       spawn,            { .v = passmenucmd             } },
 	{ MODKEY|ControlMask,             XK_p,                       spawn,            { .v = powercontrolcmd 		   } },
-	{ MODKEY|ControlMask,             XK_i,                       spawn,            { .v = qsysimcmd 			   } },
 	{ MODKEY|ControlMask,             XK_n,                       spawn,            { .v = networkmanagerdmenucmd  } },
 
 	/* start program */
