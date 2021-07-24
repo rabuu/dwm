@@ -86,7 +86,7 @@ static const char *microphonetogglecmd[]     = { "microphone_toggle",        NUL
 static const char *powercontrolcmd[] 		 = { "pwr", "ask", 				 NULL };
 static const char *scrotcmd[] 		         = { "shot", "--ask", 			 NULL };
 
-static const char *killxorg[]				 = { "killall", "Xorg", 	 NULL };
+static const char *killxorgsession[]		 = SHCMD("loginctl kill-session $XDG_SESSION_ID");
 
 
 #include <X11/XF86keysym.h>
@@ -114,7 +114,7 @@ static Key keys[] = {
 
 	/* quit dwm */
 	{ MODKEY|ShiftMask,               XK_q,                       quit,             { 0 }                            },
-	{ MODKEY|ControlMask|ShiftMask,   XK_q,                       spawn,            { .v = killxorg				   } },
+	{ MODKEY|ControlMask|ShiftMask,   XK_q,                       spawn,            { .v = killxorgsession 		   } },
 
 	/* media keys */
 	{ 0,                              XF86XK_AudioRaiseVolume,    spawn,            { .v = volumeupcmd             } },
